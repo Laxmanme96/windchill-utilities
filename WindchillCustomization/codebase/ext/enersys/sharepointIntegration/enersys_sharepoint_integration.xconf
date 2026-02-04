@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configuration SYSTEM "xconf.dtd">
+<Configuration targetFile="codebase/ext/enersys/sharepointIntegration/enersys_sharepoint_integration.properties">
+	<Property name="ext.enersys.gplm.sharepoint.integration.CLIENT_ID" overridable="true" default="ClientID" targetFile="codebase/ext/enersys/sharepointIntegration/enersys_sharepoint_integration.properties" />
+	<Property name="ext.enersys.gplm.sharepoint.integration.TENANT_ID" overridable="true" default="TenantID" targetFile="codebase/ext/enersys/sharepointIntegration/enersys_sharepoint_integration.properties" />
+	<Property name="ext.enersys.gplm.sharepoint.integration.CERT_PASS" overridable="true" default="CertPASS" targetFile="codebase/ext/enersys/sharepointIntegration/enersys_sharepoint_integration.properties" />
+	<Property name="ext.enersys.gplm.sharepoint.integration.CERT_PATH" overridable="true" default="CertPATH" targetFile="codebase/ext/enersys/sharepointIntegration/enersys_sharepoint_integration.properties" />
+	
+	<Property name="ext.enersys.gplm.sharepoint.integration.BASE_AUTHORITY" overridable="true" default="https://login.microsoftonline.com" targetFile="codebase/ext/enersys/sharepointIntegration/enersys_sharepoint_integration.properties" />
+	<Property name="ext.enersys.gplm.sharepoint.integration.SCOPE" overridable="true" default="https://enersys.sharepoint.com/.default" targetFile="codebase/ext/enersys/sharepointIntegration/enersys_sharepoint_integration.properties" />
+	<Property name="ext.enersys.gplm.sharepoint.integration.BASE_URL" overridable="true" default="https://enersys.sharepoint.com/sites" targetFile="codebase/ext/enersys/sharepointIntegration/enersys_sharepoint_integration.properties" />
+	<Property name="ext.enersys.gplm.sharepoint.integration.SITE_NAME" overridable="true" default="DEV-Quality" targetFile="codebase/ext/enersys/sharepointIntegration/enersys_sharepoint_integration.properties" />
+	
+</Configuration>

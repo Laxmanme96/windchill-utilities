@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Configuration SYSTEM "xconf.dtd">
+<Configuration targetFile="codebase/com/ptc/core/rule/server/delegate/init/RuleConfigurableTypeAttribute.properties">
+
+	<!-- Build v1.8 -->
+	<Property name="com.ptcmscloud.QUALITY_RECORDS" default="name,number,lifeCycle.id,lifeCycle,teamTemplate,teamTemplate.id,folder.id,organization.id"/>
+	
+	<!-- Build v1.10 -->
+	<Property name="com.ptcmscloud.CERTIFICATION_DOCUMENT" default="name,number,lifeCycle.id,lifeCycle,teamTemplate,teamTemplate.id,folder.id,organization.id"/>
+
+	<!-- Entries for Security Label Enablement -->
+	<AddToProperty name="wt.access.SecurityLabeled" value="DATA_CLASSIFICATION"/>
+	<!--  -->
+
+	<!-- Build v3.2 : to make Data Classification visible on Document OIR -->
+	<Property name="wt.doc.WTDocument" default="name,number,lifeCycle.id,lifeCycle,teamTemplate,teamTemplate.id,folder.id,organization.id,ext.enersys.SIMPLE_DATA_CLASSIFICATION"/>
+	<!-- Build v3.2 End -->
+
+</Configuration>

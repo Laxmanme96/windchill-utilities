@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configuration
+  SYSTEM "xconf.dtd">
+<Configuration xmlns:xlink="http://www.w3.org/1999/xlink">
+
+	<!-- Data Utility -->
+	
+	<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.ptpl.datautility.GeneratePartCheckBox" requestor="null" selector="generatePartNumberCheckBox" cardinality="duplicate"/>
+	</Service>
+	
+	<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.ptpl.datautility.Attribute1Attribute2DU" requestor="null" selector="onChangeAttribute" cardinality="duplicate"/>
+	</Service>
+	
+	<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.ptpl.datautility.ChangeNoticeInfoTable" requestor="null" selector="ChangeNoticeInfoTable" cardinality="duplicate"/>
+	</Service>
+	
+	<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.ptpl.datautility.DisableName" requestor="null" selector="renameName" cardinality="duplicate"/>
+	</Service>
+	<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.ptpl.datautility.DisableName" requestor="null" selector="renameNumber" cardinality="duplicate"/>
+	</Service>
+	
+	<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.ptpl.datautility.ListPicker" requestor="null" selector="emersonPicker" cardinality="duplicate"/>
+	</Service>
+	
+	<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.ptpl.datautility.AreaDU" requestor="java.lang.Object" selector="area" cardinality="duplicate"/>
+	</Service>
+	
+	<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.ptpl.datautility.DAPTrackDU" requestor="java.lang.Object" selector="dapTrack" cardinality="duplicate"/>
+	</Service>
+	
+	<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.ptpl.datautility.DAPTrackDU" requestor="java.lang.Object" selector="IBA|com.Windchill.Demo.dapTrack" cardinality="duplicate"/>
+	</Service>
+	
+	<!-- <Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties"> -->
+		<!-- <Option serviceClass="ext.ptpl.datautility.GetConfiguratoinTypeDatautility" requestor="java.lang.Object" selector="getConfiguratoinType" cardinality="duplicate"/> -->
+	<!-- </Service> -->
+	
+	
+	<!-- <Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties"> -->
+     
+    <!-- <Option cardinality="singleton" overridable="true" -->
+              <!-- requestor="java.lang.Object" -->
+              <!-- selector="Contry" -->
+              <!-- serviceClass="ext.ptpl.datautility.LinkedComboBoxModelDataUtlity "/> -->
+   <!-- </Service> -->
+
+	
+	
+	
+	<!-- Demo Data Utility -->
+	
+	<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+			  <Option serviceClass="ext.custom.datautility.DropDownUtility" 
+					  requestor="java.lang.Object"
+					  selector="EXTRA"
+					  cardinality="duplicate"/>
+	</Service>
+   
+	<Service name="com.ptc.core.components.descriptor.DataUtility" 
+				targetFile="codebase/com/ptc/core/components/components.dataUtilities.properties">
+				<Option serviceClass="ext.custom.datautility.LifecycleIconDataUtility" requestor="java.lang.Object" selector="lifecycleIconDataUtility" cardinality="singleton"/>
+	</Service>
+   
+		
+		<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+			  <Option serviceClass="ext.custom.datautility.AttributeHelpIcon" 
+					  requestor="java.lang.Object"
+					  selector="HelpAttribute"
+					  cardinality="duplicate"/>
+	</Service>
+	
+	<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+			  <Option serviceClass="ext.custom.datautility.RetainObjectNumberDataUtility" 
+					  requestor="java.lang.Object"
+					  selector="OriginalNumber"
+					  cardinality="duplicate"/>
+	</Service>
+	
+	<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+			  <Option serviceClass="ext.ptpl.datautility.DUMultiValue" 
+					  requestor="java.lang.Object"
+					  selector="MultiValue"
+					  cardinality="duplicate"/>
+	</Service>
+	
+	<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+			  <Option serviceClass="ext.ptpl.datautility.PackageDeliveredDU" 
+					  requestor="java.lang.Object"
+					  selector="PackageDelivered"
+					  cardinality="duplicate"/>
+	</Service>
+	
+	<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+			  <Option serviceClass="ext.ptpl.datautility.SendPackageDU" 
+					  requestor="java.lang.Object"
+					  selector="Send_Package"
+					  cardinality="duplicate"/>
+	</Service>
+		
+		<Service name="com.ptc.core.components.descriptor.DataUtility" targetFile="codebase/service.properties">
+			  <Option serviceClass="ext.ptpl.datautility.DownloadDescribedDocPrimaryContent" 
+					  requestor="java.lang.Object"
+					  selector="DescribedDocuments"
+					  cardinality="duplicate"/>
+	</Service>
+	
+	
+	
+
+	
+	<!-- Validators -->
+		
+	<Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile ="codebase/service.properties" >
+		<Option requestor="null" selector="iteratePart" serviceClass="ext.ptpl.validator.CustomUIValidator"/>
+		<!-- <Option serviceClass="ext.ptpl.validator.DisableNewCN" selector="create" requestor="wt.change2.WTChangeOrder2" cardinality="duplicate"/> -->
+		<Option requestor="null" selector="customsetAttributesWizStep" serviceClass="ext.ptpl.validator.AttributesStepValidator"/>
+		<Option requestor="null" selector="customsetEditAttributesWizStep" serviceClass="ext.ptpl.validator.EditStepAttributesValidator"/>
+		<!-- <Option serviceClass="ext.ptpl.validator.DisableRevise" selector="REVISEITEMS" requestor="null" cardinality="duplicate"/> -->
+		<!-- <Option serviceClass="ext.ptpl.validator.DisableReviseSetstate" selector="REVISEITEMS" requestor="null" cardinality="duplicate"/>  -->
+		<!-- <Option serviceClass="ext.ptpl.validator.DisableReviseSetstate" selector="SETSTATE" requestor="null" cardinality="duplicate"/>  -->
+		<!-- <Option serviceClass="ext.ptpl.validator.ValidateAttributes" selector="SETSTATE" requestor="null" cardinality="duplicate"/>  -->
+		
+		
+	
+		
+		
+	</Service>
+	
+	
+	
+	
+	<Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties">
+		<Option requestor="null" selector="WSEXPORT" serviceClass="ext.emerson.validators.ValidateWSEXPORT"/>
+	</Service>
+	
+	
+	<Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties">
+		<Option requestor="null" selector="createPartWizard" serviceClass="ext.ptpl.validator.PartAttributesStepValidator"/>
+	</Service>
+	
+	<!-- <Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties"> -->
+	<!-- This validation is also set on CN and Change Task    -->
+		<!-- <Option cardinality="singleton" requestor="null" selector="setPRAttributesWizStep" serviceClass="ext.ptpl.validator.PRAttributesStepValidator"/> -->
+	<!-- </Service> -->
+	
+	
+	<!-- <Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties"> -->
+		<!-- <Option requestor="null" selector="CUSTOMERNAME" serviceClass="ext.ptpl.validator.PromotionNoticeAttributeValidator"/> -->
+	<!-- </Service> -->
+	
+	<Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties">
+		<Option requestor="null" selector="number" serviceClass="ext.ptpl.validator.PartEditCommonAttributeValidator"/>
+		<Option requestor="null" selector="name" serviceClass="ext.ptpl.validator.PartEditCommonAttributeValidator"/>
+	</Service>
+	
+	<Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.enersys.validators.EnerSysChangeTaskValidator" selector="EnerSysChangeTaskValidator" requestor="null" />
+	</Service>
+	
+		<!-- Validate Affected and Resulting Objects in Change Notice	 -->
+			
+	<Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.ptpl.validator.ValidateAffectedAndResultingObjectsCN" selector="affectedAndResultingObjects" requestor="null" />
+	</Service>
+	
+	
+	<Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.ptpl.validator.ValidateParticipantsStep" selector="validateParticipantsStep" requestor="null" />
+	</Service>
+	
+	
+	<!-- BussinessRules Validations -->
+	<Service context="default" name="com.ptc.core.businessRules.validation.RuleValidation" targetFile="codebase/service.properties">
+		<Option cardinality="singleton" requestor="null" selector="TEST_BUSINESS_RULE_NEW" serviceClass="ext.ptpl.businessRule.PluralTestBusinessRule"/>
+	</Service>
+	
+	<Service context="default" name="com.ptc.core.businessRules.validation.RuleValidation" targetFile="codebase/service.properties">
+		<Option cardinality="singleton" requestor="null" selector="CheckResultingObjects" serviceClass="ext.ptpl.businessRule.CheckResultingObjectsBRule"/>
+	</Service>
+	
+	<Service context="default" name="com.ptc.core.businessRules.validation.RuleValidation" targetFile="codebase/service.properties">
+		<Option cardinality="singleton" requestor="null" selector="Validate_Participants_BR" serviceClass="ext.ptpl.businessRule.ValidateParticipantsBR"/>
+	</Service>
+
+	<Service context="default" name="com.ptc.core.businessRules.validation.RuleValidation" targetFile="codebase/service.properties">
+		<Option cardinality="singleton" requestor="null" selector="VALIDATE_BOM_CHILD_CANCELED_STATE" serviceClass="ext.ptpl.businessRule.ValidateBOMChildCanceleddStateBR"/>
+	</Service>
+
+	<Service context="default" name="com.ptc.windchill.uwgm.proesrv.c11n.EPMDocumentNamingDelegate" targetFile="codebase/service.properties">
+		<Option cardinality="singleton" requestor="wt.epm.EPMDocument"	serviceClass="ext.emerson.cad.SetCADDocNumber"/>
+	</Service>
+	
+	
+	
+
+
+<!-- Filter -->
+  <Service context="default"
+             name="com.ptc.core.ui.validation.SimpleValidationFilter"
+             targetFile="codebase/service.properties">
+      <Option cardinality="duplicate"
+               order="0"
+               overridable="true"
+               requestor="null"
+               selector="actionVisibilityFilter1"
+               serviceClass="ext.custom.filters.RoleBasedActionVisibilityFilter"/>
+   </Service>
+ 
+  <Service name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.custom.filters.FilterBasedONLifecycleState"
+			selector="actionVisibilityFilter2"
+			requestor="null"
+			cardinality="duplicate"/>
+	</Service>
+	
+	<Service name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.custom.filters.FilterERPSourcing"
+			selector="ERPINTEGRATED"
+			requestor="null"
+			cardinality="duplicate"/>
+			
+			
+		<Option requestor="null" selector="documentTypeTableSelector" serviceClass="ext.ptpl.filter.HideDocumentTypeTable" cardinality="duplicate" />
+			
+	</Service>
+	
+	
+	
+
+  <!-- Picker Practise  -->
+  
+		  <Service context="default" name="com.ptc.core.components.descriptor.DataUtility"
+					 targetFile="codebase/service.properties">
+					<Option cardinality="duplicate" order="0" overridable="true"
+					  requestor="java.lang.Object"
+					  selector="REFERENCE_PART"
+					  serviceClass="ext.custom.picker.CatalogPartPickerDataUtility"/>
+		   </Service>
+
+
+		<Service context="default" name="com.ptc.core.components.descriptor.DataUtility"
+					targetFile="codebase/service.properties">
+			  <Option cardinality="duplicate" order="0" overridable="true"
+					  requestor="java.lang.Object"
+					  selector="PART_PICKER"
+					  serviceClass="ext.custom.picker.PartPicker"/>
+		   </Service> 
+		   
+
+		   
+	
+	<Service context="default" name="com.ptc.core.components.descriptor.DataUtility"
+					targetFile="codebase/service.properties">
+		<Option cardinality="duplicate" order="0" overridable="true" requestor="null"
+		selector="Country"
+		serviceClass="ext.custom.picker.KAProductMainListSearch"/>
+	</Service> 
+		
+	<Service context="default" name="com.ptc.core.components.suggest.Suggestable" targetFile="codebase/service.properties">
+		<Option cardinality="duplicate" order="0" overridable="true" requestor="null"
+		selector="KAProductMainSuggestionHelperService"
+		serviceClass="ext.custom.picker.KAProductMainSuggestionHelperService"/>
+	</Service> 
+
+
+
+
+
+</Configuration>

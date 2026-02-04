@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configuration
+  SYSTEM "xconf.dtd">
+<Configuration xmlns:xlink="http://www.w3.org/1999/xlink">
+	
+	<Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties">
+		<Option cardinality="singleton" requestor="null" selector="definePRItemAttributesWizStep" serviceClass="ext.emerson.validators.DefinePRAttributesStepValidator"/>
+	</Service>
+	<Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties">
+		<Option cardinality="singleton" requestor="null" selector="defineCADItemAttributesWizStep" serviceClass="ext.emerson.validators.EmersonNewCADDocValidator"/>
+	</Service>
+	
+	<Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties">
+		<Option cardinality="singleton" requestor="null" selector="APPLEditAttributes" serviceClass="ext.emerson.validators.APPLEditAttributeValidator"/>
+	</Service>
+	
+	 <Service context="default" name="com.ptc.core.ui.validation.UIComponentValidator" targetFile="codebase/service.properties">
+		<Option requestor="null" selector="checkin" serviceClass="ext.emerson.validators.EmersonCheckinValidator"/>
+	</Service>
+	
+	<Service context="default" name="com.ptc.core.businessRules.validation.RuleValidation" targetFile="codebase/service.properties">
+      <Option serviceClass="ext.emerson.windchill.promote.businessRules.validator.FormatRuleValidator"
+              selector="NUMBER_FORMAT_RULE"
+              cardinality="duplicate"
+              requestor="null"/>
+      <Option serviceClass="ext.emerson.windchill.promote.businessRules.validator.EmptyRolesValidator"
+              selector="EMPTY_ROLE_RULE"
+              cardinality="duplicate"
+              requestor="null"/>
+	  <Option serviceClass="ext.emerson.windchill.promote.businessRules.validator.EmptyContentValidator"
+              selector="EMPTYCONTENT_RULE"
+              cardinality="duplicate"
+              requestor="null"/>
+	  <Option serviceClass="ext.emerson.windchill.promote.businessRules.validator.EmptyRolesValidatorForDesigner"
+              selector="EMPTY_ROLE_RULE_FOR_DESIGNER"
+              cardinality="duplicate"
+              requestor="null"/>
+	 </Service>
+
+
+</Configuration>

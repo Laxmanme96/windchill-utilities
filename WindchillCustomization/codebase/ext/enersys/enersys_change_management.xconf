@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configuration	SYSTEM "xconf.dtd">
+<Configuration>
+
+	<!-- hide actions in EnersysPart -->
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.enersys.validators.EnerSysActionsFilter" selector="EnerSysActionsFilter" requestor="null"/>
+	</Service>
+
+	<!-- Setup Participants -->
+	<Service context="default" name="com.ptc.core.ui.validation.SimpleValidationFilter" targetFile="codebase/service.properties">
+		<Option serviceClass="ext.enersys.validators.EnerSysSetupParticipantFilter" selector="customEnerSysSetupParticipantFilter" requestor="null"/>
+	</Service>
+
+</Configuration>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Configuration SYSTEM "xconf.dtd">
+<Configuration targetFile="codebase/WEB-INF/conf/wvs.properties">
+
+	<!-- START OF Enersys WVS Config Entries -->
+	<Property name="publish.copyforwardallrepresentationsoncopy" default="false" overridable="true"  targetFile="codebase/WEB-INF/conf/wvs.properties" />
+	<Property name="publish.copyforwardallrepresentationsonrevise" default="false" overridable="true"  targetFile="codebase/WEB-INF/conf/wvs.properties" />
+	<Property name="publish.promote.enabled" default="false" overridable="true" targetFile="codebase/WEB-INF/conf/wvs.properties" />
+	<!-- Build v1.7 -->
+	<Property name="publish.cadtimeout.drawing" default="3600" overridable="true" targetFile="codebase/WEB-INF/conf/wvs.properties" />
+	<!-- Build v1.12 -->
+	<Property name="publish.representable.owner.usefirstiteration" default="false" overridable="true"  targetFile="codebase/WEB-INF/conf/wvs.properties" />
+	<Property name="publish.copyrepresentationsforward" default="true" overridable="true"  targetFile="codebase/WEB-INF/conf/wvs.properties" />
+	<Property name="publish.copyrepresentationsforward.part.restrict" default="false" overridable="true"  targetFile="codebase/WEB-INF/conf/wvs.properties" />
+	<!-- Build v2.8 -->
+	<Property name="edrload.occurrence.frombuild" default="SOLIDWORKS" targetFile="codebase/WEB-INF/conf/wvs.properties" />
+	<Property name="edrload.occurrence.copytransform.matchingids" default="SOLIDWORKS INVENTOR PROE CATIAV5 CATIAV6" targetFile="codebase/WEB-INF/conf/wvs.properties" />
+	<Property name="edrload.livecycle.delegate" default="ext.enersys.wvs.aem.EnerSysAEMDelegate/getEnerSysAEMInvocationParams" targetFile="codebase/WEB-INF/conf/wvs.properties" />
+	<!-- Build v3.2 -->
+	<AddToProperty name="publish.publishqueue.setnames" value="ENSSW" />
+	<Property name="publish.publishqueue.priorities.filtermethod" default="ext.enersys.wvs.publishingmgmt.EnerSysPublishQueueFilter/filterCADEnerSys" targetFile="codebase/WEB-INF/conf/wvs.properties"/>
+	<Property name="publish.publishqueue.usesetworkers.filtermethod" default="ext.enersys.wvs.publishingmgmt.EnerSysPublishQueueFilter/assignWorkerEnerSys" targetFile="codebase/WEB-INF/conf/wvs.properties"/>	
+	<Property name="publish.publishqueue.usesetworkers.forqueueset.ENSSW" default="ALL" targetFile="codebase/WEB-INF/conf/wvs.properties"/>	
+	<!-- Added below for US14522 build V3.18 -->
+	<Property name="publish.afterloadermethod" default="com.ptc.wvs.util.AfterEDRloader/renameAdditionalfiles_RevInfo" overridable="true"  targetFile="codebase/WEB-INF/conf/wvs.properties" />
+	<!-- END OF Enersys WVS Config Entries -->
+	
+</Configuration>
