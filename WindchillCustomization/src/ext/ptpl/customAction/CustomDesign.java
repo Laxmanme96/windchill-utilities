@@ -68,7 +68,7 @@ public class CustomDesign {
 		return list;
 
 	}
-
+//Feedback Message
 	public static FeedbackMessage regenerateName(WTPart part) throws WTException, WTPropertyVetoException {
 		System.out.println("regenerateName Processgin part:" + part);
 		WTPart partObject = part;
