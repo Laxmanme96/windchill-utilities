@@ -1,0 +1,19 @@
+# Windchill runtime
+codebase/
+wtSafeArea/
+
+# Build
+bin/
+target/
+build/
+
+# Logs
+logs/
+
+# IDE
+.settings/
+.project
+.classpath
+
+# Compiled
+*.class
