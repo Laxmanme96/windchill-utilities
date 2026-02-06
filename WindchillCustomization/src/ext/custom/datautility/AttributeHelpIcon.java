@@ -13,6 +13,9 @@ import com.ptc.core.ui.resources.ComponentMode;
 import wt.log4j.LogR;
 import wt.util.WTException;
 
+/* Comment for pull check
+*/
+
 public class AttributeHelpIcon extends DefaultDataUtility {
 	protected static final Logger logger = LogR.getLogger(AttributeHelpIcon.class.getName());
 
