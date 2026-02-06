@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Configuration SYSTEM "xconf.dtd">
+<Configuration targetFile="codebase/wt.properties">
+
+	<!-- START OF Enersys WT Config Entries -->
+	<!-- <Property name="wt.queue.removeCompleted.PublisherQueue1" default="true" overridable="true"  targetFile="codebase/wt.properties" /> -->
+	<!-- <Property name="wt.queue.removeCompleted.PublisherQueue2" default="true" overridable="true"  targetFile="codebase/wt.properties" /> -->
+	<Property name="enersys.env.name" default="@@CHANGE_ENV@@" overridable="true" targetFile="codebase/wt.properties"/>
+	
+	<!-- wt.services.service.<<Windchill Major Version>>, <<BuildMajVersion>>, <<Build MinVersion>>, <<listener/manager sequence>> -->
+	<Property name="wt.services.service.11010201" default="ext.enersys.service.EnerSysService/ext.enersys.service.StandardEnerSysService" overridable="true"  targetFile="codebase/wt.properties" />
+	<!-- For CHANGE MANAGEMENT 2.0 Build v1.6 -->
+	<Property name="wt.services.service.11010601" default="ext.enersys.cm2.service.CM2Service/ext.enersys.cm2.service.StandardCM2Service" overridable="true"  targetFile="codebase/wt.properties" />
+	<!-- For Build v1.8 -->
+	<Property name="wt.services.service.11010801" default="ext.enersys.service.ListenersManager/ext.enersys.service.EnerSysEventListenersManager" overridable="true"  targetFile="codebase/wt.properties" />
+	<!-- For Build v1.11-HF1 -->
+	<Property name="wt.workflow.engine.notifyActivityParticipants" default="participants" overridable="true"  targetFile="codebase/wt.properties" />
+	<!-- For Build v1.13 -->
+	<Property name="wt.associationRules.enableOrganizationRules" default="true" overridable="true"  targetFile="codebase/wt.properties" />
+	<Property name="wt.change2.changeTransitions" default="CHANGE,PRODUCTION_RELEASED,OBSOLESCENCE,PROTOTYPE_B,PROTOTYPE_C,B_RELEASE_CONCEPT,C_RELEASE_CONCEPT" overridable="true"  targetFile="codebase/wt.properties" />
+	
+	<!-- For Build v2.1 -->
+	<Property name="wt.services.service.11120101" default="ext.enersys.cm3.service.CM3Service/ext.enersys.cm3.service.StandardCM3Service" overridable="true"  targetFile="codebase/wt.properties" />
+	<!-- END OF Enersys WT Config Entries -->
+	
+	<!-- For Build v2.7 -->
+	<Property name="wt.change.propagateAttachmentForCNTemplate.enabled" default="true" overridable="true"  targetFile="codebase/wt.properties" />
+	
+	<!-- For Build v2.9 -->
+	<Property name="wt.change2.pendingOrderStates" default="IMPLEMENTATION,UNDERREVIEW,REWORK,OPEN" overridable="true"  targetFile="codebase/wt.properties" />
+	<Property name="wt.change2.pendingResultingStates" default="IMPLEMENTATION,UNDERREVIEW,REWORK,OPEN" overridable="true"  targetFile="codebase/wt.properties" />
+	<Property name="wt.change2.pendingRequestStates" default="IMPLEMENTATION,UNDERREVIEW,REWORK,OPEN" overridable="true"  targetFile="codebase/wt.properties" />
+	
+	<!-- For Build v2.12 -->
+	<Property name="wt.services.service.11121201" default="ext.enersys.reading.service.ReadingDataService/ext.enersys.reading.service.StandardReadingDataService" overridable="true"  targetFile="codebase/wt.properties" />
+
+	<!-- For Build v3.2 -->
+	<Property name="wt.queue.removeCompleted.PublisherQueueENSSW1" default="false" targetFile="codebase/wt.properties"/>
+	<Property name="wt.queue.removeCompleted.PublisherQueueENSSW2" default="false" targetFile="codebase/wt.properties"/>
+	<Property name="wt.queue.removeCompleted.PublisherQueueENSSW3" default="false" targetFile="codebase/wt.properties"/>
+	<Property name="wt.queue.removeCompleted.PublisherQueueENSSW4" default="false" targetFile="codebase/wt.properties"/>
+	<Property name="com.ptc.jca.exportRowLimit" default="500000"/>
+	<!-- -->
+	
+	<!-- QMS Build Entries Start -->
+	<Property name="wt.workflow.task.navigateURL" default="$(com.ptc.thingworxURL)/Runtime/index.html?mashup=Enersys_TaskDetailsScreen_MU" overridable="true"  targetFile="codebase/wt.properties" />
+	<!-- QMS Build Entries End -->
+	<!-- Added in Build V3.12 - Ticket 8801-->
+	<Property name="wt.services.service.11010301" default="ext.enersys.service.EnerSysSmartCollectorService/ext.enersys.service.StandardEnerSysSmartCollectorService" overridable="true"  targetFile="codebase/wt.properties" />
+    <!-- Added in Build V3.12 - Ticket 8801-->
+    
+    	
+	<!-- QMS Doc control entries start-->
+	<Property name="wt.services.service.11121205" default="ext.enersys.qms.listener.QMSDocListenerService/ext.enersys.qms.listener.StandardQMSDocListener" overridable="true"  targetFile="codebase/wt.properties" />
+    <!-- QMS Doc control entries end-->
+</Configuration>

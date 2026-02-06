@@ -1,14 +1,13 @@
 # Windchill runtime
-codebase/
-wtSafeArea/
+#codebase/ext
 
 # Build
-bin/
-target/
-build/
+#bin/
+#target/
+#build/
 
 # Logs
-logs/
+#logs/
 
 # IDE
 .settings/

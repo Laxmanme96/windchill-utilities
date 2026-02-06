@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE listofactions SYSTEM "customActions.dtd">
+<listofactions>
+
+  <objecttype name="object" >
+      <action name="iteratePart" >
+	  <command class="ext.ptpl.customAction.CustomDesign" method ="execute" url="/netmarkets/jsp/custom/iteratePart.jsp"  windowType="popup"/>
+	  <tooltip>iteratePart_tip</tooltip>
+	  <label>Iterate Part</label>
+	  <icon>netmarkets/images/revise.gif</icon>
+      </action>  
+  </objecttype>
+  
+   <objecttype name="object" >
+      <action name="releasePart" >
+	  <command class="ext.ptpl.customAction.CustomDesign" method ="execute" url="/netmarkets/jsp/custom/releasePart.jsp"  windowType="popup"/>
+	  <title>releasePart_titel</title>	
+	  <tooltip>releasePart_tip</tooltip>
+	  <label>Release Part</label>
+	  <icon>netmarkets/images/revise.gif</icon>
+      </action>  
+  </objecttype>
+  
+    <objecttype name="object" >
+      <action name="describedByDocuments" >
+	  <command class="ext.ptpl.customAction.CustomDesign" method ="execute" url=""  windowType="popup"/>
+	  <title>describedByDocuments</title>	
+	  <tooltip>describedByDocuments</tooltip>
+	  <label>Described By Documents</label>
+	  <icon>netmarkets/images/revise.gif</icon>
+      </action>  
+  </objecttype>
+  
+  
+    <objecttype name="doc" class="wt.doc.WTDocument" resourceBundle= "ext.ptpl.rb.customRB"  >
+      <action name="createDoc" >
+	  <command class="ext.ptpl.customAction.CustomDocFormProcessor" method ="execute" url="/netmarkets/jsp/custom/createDoc.jsp"  windowType="popup"  />
+      </action>  
+	  
+	  <action name="setDocNameWizardStep" >
+	  <command  url="/netmarkets/jsp/custom/setDocNameWizardStep.jsp"  windowType="wizard_step" />
+      </action> 
+	  
+	  <action name="setDocNumberWizardStep" >
+	  <command  url="/netmarkets/jsp/custom/setDocNumberWizardStep.jsp"  windowType="wizard_step"  />
+      </action> 
+	 
+  </objecttype>
+     <objecttype name="part" class="wt.part.WTPart" resourceBundle= "ext.ptpl.rb.customRB"  >
+      <action name="customRelatedObjects" >
+	  <label>Custom Related Objects</label>
+	  <command url="/netmarkets/jsp/custom/customRelatedObjects.jsp"  windowType="popup"  />
+      </action>  
+	  
+	  <action name="customRelatedObjectsTable" >
+	  <component  name="ext.ptpl.CustomRelatedObjectsTable"  windowType="wizard_step"  />
+      </action> 
+	  
+	  <action name="customRelatedObjectsTree" >
+	  <component  name="ext.ptpl.CustomRelatedObjectsTree"  windowType="wizard_step"  />
+      </action> 
+	</objecttype>
+  
+ 	  
+	<objecttype name="object" class="wt.fc.Persistable" >
+		<action resourceBundle="com.ptc.core.ui.componentRB" name="editAttributesWizStep" id="editAttributesWizStep" preloadWizardPage="false" afterVK="customsetEditAttributesWizStep" required="true" >
+			<component name="editAttributesWizStep" typeBased="true" windowType="wizard_step"/>
+		</action>
+	</objecttype>
+  
+  
+	<objecttype name="document" class="wt.doc.WTDocument" resourceBundle="com.ptc.windchill.enterprise.doc.documentResource">
+		<!-- <action name="create" uicomponent="CREATE_DOC" dtiUpload="true" ajax="row"> -->
+			<!-- <command class="ext.ptpl.customAction.CustomCreateDocFormProcessor" method="execute" windowType="popup" onClick="validateCreateLocation(event)"/> -->
+				<!-- <includeFilter name="projectM4D" /> -->
+				<!-- <includeFilter name="showNewActionPreValidation" /> -->
+		<!-- </action> -->
+			<action name="createDocumentSetTypeAndAttributesWizStep" id="createDocumentSetTypeAndAttributesWizStep" afterVK="customsetAttributesWizStep" preloadWizardPage="false" required="true" afterJS="validateDuplicateName">
+			<command windowType="wizard_step" url="servlet/TypeBasedIncludeServlet?contextAction=createDocumentSetTypeAndAttributesWizStep"/>
+		</action>
+	</objecttype>
+
+
+	  
+	 <!-- <objecttype name="promotionRequest" class="wt.maturity.PromotionNotice" resourceBundle="com.ptc.windchill.enterprise.maturity.promotionRequestActionsRB"> -->
+		<!-- <action name="workflowParticipantsStep" required="false" preloadWizardPage="false"> -->
+			<!-- <description>Promote wizard promotion objects step</description> -->
+			<!-- <command class="ext.ptpl.validator.ValidatePromotionParticipants" windowType="wizard_step" /> -->
+		<!-- </action> -->
+	   <!-- </objecttype> -->
+	   
+	   
+	   
+	   <objecttype name="promotionRequest" class="wt.maturity.PromotionNotice" resourceBundle="com.ptc.windchill.enterprise.maturity.promotionRequestActionsRB">
+	   <action name="workflowParticipantsStep" required="false" preloadWizardPage="false" afterVK="validateParticipantsStep">
+        <description>Promote wizard promotion objects step</description>
+        <command class="com.ptc.windchill.enterprise.maturity.forms.delegates.PromotionParticipantsFormDelegate" windowType="wizard_step"/>
+      </action>
+	   </objecttype>
+	   
+	   
+	   
+		
+		<!-- <objecttype name="work" class="wt.workflow.work.WorkItem"> -->
+			<!-- <action name="complete" enabledwhensuspended="true" ajax="page"> -->
+				<!-- <command class="com.ptc.netmarkets.work.NmWorkItemCommands" method="complete" onClick="validateComments()"/>   -->
+			<!-- </action>   -->
+		<!-- </objecttype> -->
+		
+		
+	<!-- Promotion Attribute Validation (Cert Required and Sourcing Iterm)	Selector = definePRItemAttributesWizStep -->
+	<objecttype name="object" class="wt.fc.Persistable">  
+		<action name="defineItemAttributesWizStep" afterVK="definePRItemAttributesWizStep" id="defineItemAttributesWizStep" preloadWizardPage="false" required="true" resourceBundle="com.ptc.core.ui.componentRB">
+		<component name="defineItemAttributesWizStep" typeBased="true" windowType="wizard_step"/>
+		</action>
+	 </objecttype>
+	<!-- New CAD Document Attribute Validation	Selector = defineCADItemAttributesWizStep -->
+	<objecttype name="caddocument" class="wt.epm.EPMDocument" resourceBundle="com.ptc.windchill.uwgm.cadx.newcaddoc.newcaddocResource">
+	       <action name="defineItemAttributesWizStep" afterVK="defineCADItemAttributesWizStep" id="defineItemAttributesWizStep" preloadWizardPage="false" required="true" postloadJS="newCADDocumentInitialize" resourceBundle="com.ptc.core.ui.componentRB">
+           <component name="defineItemAttributesWizStep" typeBased="true" windowType="wizard_step"/>
+        </action>	
+	 </objecttype>
+		
+	
+	<objecttype name="object" class="wt.fc.Persistable">  
+	<action name="editAttributesWizStep" id="editAttributesWizStep" preloadWizardPage="false" required="true" afterVK="APPLEditAttributes" resourceBundle="com.ptc.core.ui.componentRB">
+         <!--<command windowType="wizard_step" url="servlet/TypeBasedIncludeServlet?contextAction=editAttributesWizStep"/> -->
+         <component name="editAttributesWizStep" typeBased="true" windowType="wizard_step"/>
+      </action>
+	   </objecttype>
+	   
+	  <!-- <objecttype name="pdmObject" class="wt.fc.WTObject" > -->
+      <!-- <action checkaccess="true" name="WSEXPORT" enabledwhensuspended="true" renderType="PDM" > -->
+       <!-- <command class="ext.ptpl.validator.ValidateWSEXPORT"  method="WSEXPORT" windowType="page" onClick="PTC.validation.AJAXPostSelectValidation(event, 'WSEXPORT')"/> -->
+      <!-- </action> -->
+	<!-- </objecttype> -->
+	
+	<!-- <objecttype name="pdmObject" class="wt.fc.WTObject" > -->
+      <!-- <action checkaccess="true" name="WSEXPORT" enabledwhensuspended="true" renderType="PDM" > -->
+            <!-- <command method="WSEXPORT" class="java.lang.Object" windowType="page" onClick="PTC.validation.AJAXPostSelectValidation(event, 'WSEXPORT')" /> -->
+      <!-- </action> -->
+	<!-- </objecttype> -->
+
+	<!-- <action name="WSEXPORT" checkaccess="true" enabledwhensuspended="true" renderType="PDM"> -->
+         <!-- <command windowType="page" class="java.lang.Object" method="WSEXPORT"/> -->
+      <!-- </action> -->
+	  
+	   
+	
+	
+
+	 <objecttype name="object" >
+      <action name="Re_Generate_Name" >
+	  <command  url="/netmarkets/jsp/custom/employees.jsp"  windowType="popup" />
+	  <title>Re-Generate_Name</title>	
+	  <tooltip>Re-Generate_Name</tooltip>
+	  <label>Re-Generate Name</label>
+	  <icon>netmarkets/images/revise.gif</icon>
+      </action>  
+  </objecttype>
+	
+	
+	 <objecttype name="jspAction" class="wt.part.WTPart" >
+	<action name="Filter_Test_Action_1" >
+		<label>Custom Action written for JSP</label>
+         <command method="execute" windowType="popup" url="/netmarkets/jsp/ext/Dummyjsp.jsp"/>
+		 <includeFilter name="actionVisibilityFilter1"/>
+      </action>
+	</objecttype>
+	
+	<objecttype name="jspAction" class="wt.part.WTPart" >
+	<action name="Filter_Test_Action_2" >
+		<label>Custom Action written for JSP</label>
+         <command method="execute" windowType="popup" url="/netmarkets/jsp/ext/Dummyjsp.jsp"/>
+		 <includeFilter name="actionVisibilityFilter2"/>
+      </action>
+	</objecttype>
+	
+	
+	<objecttype name="Object" >
+      <action name="Comments" >
+	  <command  url="/netmarkets/jsp/custom/Comments.jsp"  windowType="popup" />
+	  <title>Comments</title>	
+	  <tooltip>Comments</tooltip>
+	  <label>Comments</label>
+	  <icon>netmarkets/images/comment.gif</icon>
+      </action>  
+	</objecttype>
+	
+	<objecttype name="Object" >
+      <action name="downloadDocAttachments" >
+	  <command  url="/netmarkets/jsp/custom/Comments.jsp"  windowType="popup" />
+	  <title>Download Doc Attachments</title>	
+	  <tooltip>Download Doc Attachments</tooltip>
+	  <label>Download Doc Attachments</label>
+	  <icon>netmarkets/images/comment.gif</icon>
+      </action>  
+	</objecttype>
+	
+	
+	
+	 <!-- <objecttype name="changeTask" class="wt.change2.WTChangeActivity2" resourceBundle="com.ptc.windchill.enterprise.change2.changeManagementActionsRB"> -->
+	<!-- <action name="affectedAndResultingItemsStep" id="affectedAndResultingItems" preloadWizardPage="false" required="true" afterVK ="affectedAndResultingObjects"> -->
+         <!-- <description>Affected and resulting objects wizard step</description> -->
+         <!-- <command class="com.ptc.windchill.enterprise.change2.forms.delegates.AffectedAndResultingItemsFormDelegate" windowType="wizard_step"/> -->
+      <!-- </action> -->
+	 <!-- </objecttype> -->
+	 
+	 
+	 <objecttype name="change" class="wt.fc.Persistable" resourceBundle="com.ptc.windchill.enterprise.change2.changeManagementActionsRB">
+      <action name="associatedChangeItemsStep" id="associatedChangeItemsStep" preloadWizardPage="false" required="false" afterVK ="affectedAndResultingObjects">
+         <description>Associated change items step</description>
+         <component name="associatedChangesStep"/>
+      </action>
+	  </objecttype>
+	 
+	 
+	 
+	 <objecttype name="change" class="wt.change2.ChangeItem" resourceBundle="com.ptc.windchill.enterprise.change2.changeManagementActionsRB">
+	 <action name="reviewItemStep" id="reviewItemStep" preloadWizardPage="false" required="false" afterVK ="affectedAndResultingObjects2">
+         <description>Review Item wizard step</description>
+         <command class="com.ptc.windchill.enterprise.change2.forms.delegates.ReviewItemFormDelegate" windowType="wizard_step"/>
+      </action>
+	 </objecttype>
+	 
+	 
+     <objecttype name="table">
+		<action name="documentTypeTable" >
+			<label>Document Type Table</label>
+				<component  name="ext.ptpl.DocumentTypeTable" windowType="popup" />
+				<includeFilter name="documentTypeTableSelector"/>
+		</action> 
+	 </objecttype>
+	  
+	  
+	<!--DO NOT EDIT THIS FILE. ALL CHANGES RELATED TO ACTION MUST BE DONE THROUGH enersys-actions.xml-->
+<include href="config/actions/enersys-actions.xml"/>
+<include href="config/actions/es-actions.xml"/>
+</listofactions>
