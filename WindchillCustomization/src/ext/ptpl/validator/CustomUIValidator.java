@@ -23,6 +23,9 @@ import wt.part.WTPart;
 import wt.util.WTException;
 import org.apache.logging.log4j.Logger;
 
+/* Autho of this file is Class Owner
+*/
+
 public class CustomUIValidator extends DefaultUIComponentValidator {
 	protected static final Logger logger = LogR.getLogger(CustomUIValidator.class.getName());
 

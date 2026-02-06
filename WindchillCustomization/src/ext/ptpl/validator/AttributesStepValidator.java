@@ -19,6 +19,9 @@ import com.ptc.core.ui.validation.UIValidationStatus;
 import wt.log4j.LogR;
 import wt.util.WTException;
 
+
+/* Local comment*/
+
 public class AttributesStepValidator extends SetAttributesStepValidator {
 	
 	protected static final Logger logger = LogR.getLogger(AttributesStepValidator.class.getName());
