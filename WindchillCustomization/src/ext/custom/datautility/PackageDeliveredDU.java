@@ -17,6 +17,9 @@ import wt.query.QuerySpec;
 import wt.query.SearchCondition;
 import wt.util.WTException;
 
+/* Author information
+ */
+
 public class PackageDeliveredDU extends DefaultDataUtility {
 
 	@Override
